@@ -27,15 +27,32 @@
  
 <script>
   // Kode JavaScript kita
-  function welcome(){
-    alert('Sim salabim muncullah kalian!');
+  function increment() {
+    document.getElementById('count').innerText++;
+   
+    if (document.getElementById('count').innerText == 7) {
+      const hiddenMessage = document.createElement('h4');
+      hiddenMessage.innerText = 'Selamat! Anda menemukan hadiah tersembunyi...';
+ 
+      const image = document.createElement('img');
+      image.setAttribute(
+        'src',
+        'https://github.com/pramudya-27/belajar-front-end/blob/main/image1.jpg?raw=true',
+      );
+ 
+      const contents = document.querySelector('.contents');
+      contents.appendChild(hiddenMessage).appendChild(image);
+    }
+  }
+ 
+  function welcome() {
+    alert('Sim salabim muncullah elemen-elemen HTML!');
+ 
     const contents = document.querySelector('.contents');
     contents.removeAttribute('hidden');
   }
-
-  function increment(){
-    document.getElementById('count').innerText++;
-  }
+ 
+  document.getElementById('incrementButton').onclick = increment;
   document.body.onload = welcome;
 </script>
 </body>
